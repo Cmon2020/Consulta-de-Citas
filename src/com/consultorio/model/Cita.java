@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.consultorio.model;
+
+/**
+ *
+ * @author chrisjonathanmonico
+ */
+public class Cita {
+    private String id;
+    private String fechaHora;
+    private String motivo;
+    private Doctor doctor;
+    private Paciente paciente; 
+    
+    public Cita(String id, String fechaHora, String motivo, Doctor doctor, Paciente paciente) {
+        this.id = id;
+        this.fechaHora = fechaHora;
+        this.motivo = motivo;
+        this.doctor = doctor;
+        this.paciente = paciente;
+    }
+    
+    public String getId() { return id; }
+    public String getFechaHora() { return fechaHora; }
+    public String getMotivo() { return motivo; }
+    public Doctor getDoctor() { return doctor; }
+    public Paciente getPaciente() { return paciente; }
+    
+    public String toCSV() {
+        return id + "," + fechaHora + "," + motivo + "," + doctor.getId() + "," + paciente.getId();
+    }
+}
